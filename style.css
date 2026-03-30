@@ -1,0 +1,32 @@
+:root {
+  --colour01: rgb(25, 0, 255);
+  --colour02: rgb(255, 255, 255);
+  --colour03: rgb(255, 136, 57);
+  --colour04: rgba(0, 0, 225, 0.949);
+  --border: inset 0.2rem var(--colour03);
+}
+
+body {
+  background-color: var(--colour02);
+  color: var(--colour01);
+  border: var(--border);
+}
+
+h1 {
+  text-align: center;
+}
+
+details {
+  padding-left: 25px;
+}
+
+summary {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: decimal;
+  list-style: none;
+}
