@@ -7,25 +7,36 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
+    <script src="https://unpkg.com/konva@10/konva.min.js"></script>
   </head>
   <body>
     <h1>This is the Studio Work Project :()</h1>
     <main>
-      <details>
-        <summary>Overview</summary>
-        <ul>
-          Cropping Tool, crop images<br />
-          Multiple stencils to Use
-          <br />
-          Small animation for cropping action
-          <br />
-          Click, drag, drop
-          <br />
-          Two Sqaures, one to crop image, another to drop the crops
-          <br />
-          Save Image for cropped shape
-        </ul>
-      </details>
+      <div>
+        <details>
+          <summary>Overview</summary>
+          <ul>
+            Cropping Tool, crop images<br />
+            Multiple stencils to Use
+            <br />
+            Small animation for cropping action
+            <br />
+            Click, drag, drop
+            <br />
+            Two Sqaures, one to crop image, another to drop the crops
+            <br />
+            Save Image for cropped shape
+          </ul>
+        </details>
+      </div>
+      <style>
+        body,
+        html {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+      <div id="container"></div>
     </main>
   </body>
 </html>
