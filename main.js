@@ -1,5 +1,3 @@
-import Konva from "konva";
-
 const stage = new Konva.Stage({
   container: "container",
   width: window.innerWidth,
@@ -13,11 +11,11 @@ stage.add(layer);
 const imageObj = new Image();
 imageObj.onload = function () {
   const yoda = new Konva.Image({
-    x: 50,
+    x: 100,
     y: 50,
     image: imageObj,
-    width: 106,
-    height: 118,
+    width: 200,
+    height: 218,
   });
 
   layer.add(yoda);
