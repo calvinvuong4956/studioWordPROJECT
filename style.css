@@ -1,22 +1,22 @@
 :root {
-  --colour01: rgb(20, 0, 201);
+  --colour01: rgb(16, 16, 16);
   --colour02: rgb(255, 255, 255);
   --colour03: rgb(255, 136, 57);
   --colour04: rgba(0, 0, 225, 0.949);
-  --border: inset 0.2rem var(--colour03);
+  /* --border: inset 0.2rem var(--colour03); */
 }
 
 body {
   background-color: var(--colour02);
   color: var(--colour01);
-  border: var(--border);
+  /* border: var(--border); */
 }
 
 h1 {
   text-align: center;
 }
 
-details {
+/* details {
   padding-left: 25px;
 }
 
@@ -29,4 +29,4 @@ summary {
 ul {
   list-style: decimal;
   list-style: none;
-}
+} */

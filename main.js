@@ -14,10 +14,11 @@ imageObj.onload = function () {
     x: 100,
     y: 50,
     image: imageObj,
-    width: 200,
-    height: 218,
+    width: 260,
+    height: 200,
   });
 
   layer.add(yoda);
 };
-imageObj.src = "https://konvajs.org/assets/yoda.jpg";
+imageObj.src =
+  "https://static.wikia.nocookie.net/disneythehunchbackofnotredame/images/6/68/Hollow_Ichigo.jpg/revision/latest?cb=20140312233035";
