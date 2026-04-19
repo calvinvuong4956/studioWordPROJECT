@@ -1,32 +1,140 @@
 :root {
-  --colour01: rgb(16, 16, 16);
+  --colour01: rgb(0, 0, 0);
   --colour02: rgb(255, 255, 255);
   --colour03: rgb(255, 136, 57);
   --colour04: rgba(0, 0, 225, 0.949);
-  /* --border: inset 0.2rem var(--colour03); */
+  --border: inset 0.3rem var(--colour01);
 }
 
 body {
   background-color: var(--colour02);
   color: var(--colour01);
+  margin: 30px;
   /* border: var(--border); */
 }
 
 h1 {
   text-align: center;
-}
-
-/* details {
-  padding-left: 25px;
-}
-
-summary {
-  font-weight: bold;
+  font-family: cursive;
+  font-weight: bolder;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-ul {
-  list-style: decimal;
-  list-style: none;
-} */
+#cropped-image {
+  display: block;
+  max-width: 50%;
+}
+
+#workspace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  margin: 40px;
+}
+
+#inputImage {
+  padding-top: 10px;
+}
+
+.btn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cropButton,
+#downloadButton {
+  display: none;
+  padding-top: 10px;
+}
+
+#cropButton {
+  padding-right: 2.5px;
+}
+
+#downloadButton {
+  padding-left: 2.5px;
+}
+
+#shapeToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+.toggleBtn {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 1.5px solid rgba(83, 83, 83, 0.363);
+  /* border: 1.5px solid rgb(110, 233, 255); */
+  background: rgba(78, 78, 78, 0.055);
+  color: rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+  font-size: 40px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  overflow: hidden;
+}
+
+#squareToggle {
+  padding-bottom: 8px;
+}
+
+#circleToggle {
+  padding-bottom: 5px;
+}
+
+.toggleBtn.active {
+  background: rgb(59, 70, 73);
+  color: rgb(110, 233, 255);
+}
+
+body.circle-mode .cropper-view-box,
+body.circle-mode .cropper-face {
+  border-radius: 50%;
+}
+
+#cropperContainer {
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0px 0px 0px 1.5px rgb(0, 0, 0);
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+#croppedImage {
+  max-width: 100%;
+  display: block;
+}
+
+#container {
+  background-color: rgb(233, 233, 233);
+  width: 500px;
+  height: 500px;
+  /* Used Box-Shadow for outline of the container instead of "outline" and "border" 
+  Because box-shadow doesn't blur the reality between what the user sees and the downloaded image
+  i.e. a cropped image is unseen on user's screen when dragged to edge of the canvas
+  but when downloaded, that cropped image bleeds onto the canvas*/
+  box-shadow: 0px 0px 0px 1.5px rgb(0, 0, 0);
+  /* outline: 2px solid var(--colour01); */
+  /* border: var(--border); */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cropper-point.point-se {
+  width: 5px !important;
+  height: 5px !important;
+}

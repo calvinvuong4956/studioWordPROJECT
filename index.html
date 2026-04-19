@@ -8,35 +8,48 @@
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <script src="https://unpkg.com/konva@10/konva.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
   </head>
   <body>
     <h1>Crop-llage</h1>
-    <main>
-      <!-- <div>
-        <details>
-          <summary>Overview</summary>
-          <ul>
-            Cropping Tool, crop images<br />
-            Multiple stencils to Use
-            <br />
-            Small animation for cropping action
-            <br />
-            Click, drag, drop
-            <br />
-            Two Sqaures, one to crop image, another to drop the crops
-            <br />
-            Save Image for cropped shape
-          </ul>
-        </details>
-      </div> -->
-      <style>
-        body,
-        html {
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-      <div id="container"></div>
-    </main>
+
+    <div id="workspace">
+      <div id="cropperSection">
+        <div id="cropperContainer">
+          <img src="" id="croppedImage" alt="" />
+        </div>
+
+        <input type="file" id="inputImage" accept="image/*" />
+      </div>
+
+      <div id="shapeToggle">
+        <button id="squareToggle" class="toggleBtn active" title="Square crop">
+          ■
+        </button>
+        <button id="circleToggle" class="toggleBtn" title="Circle crop">
+          ●
+        </button>
+      </div>
+
+      <div id="croppedSection">
+        <div id="container"></div>
+
+        <div id="cropButton"><button class="btn">Crop Image</button></div>
+        <div id="downloadButton">
+          <button class="btn">Download Cropped Image</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 
+    <div>
+      <div>
+        <img src="" id="croppedImage" alt="" />
+      </div>
+    </div> -->
   </body>
 </html>
