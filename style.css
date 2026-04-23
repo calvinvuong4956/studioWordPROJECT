@@ -7,6 +7,9 @@
 }
 
 body {
+  /* Decided on a simple white-background black-text colour scheme
+  As I feel like it suits my worth and purpose of "satisfaction" and wanting to provide users a pleasant experience
+  Simple colours help mitigate overstimulation, resulting in the pleasant experience */
   background-color: var(--colour02);
   color: var(--colour01);
   margin: 30px;
@@ -15,6 +18,10 @@ body {
 
 h1 {
   text-align: center;
+  /* Current font is playful and casual
+  I chose this in hopes of counteracting the "serious" and "productive" nature of cropping
+  However, this font does feel a bit too over-the-top and give the impression that my creative tool is a joke
+  Still deliberating if it should be changed because I do think it feels a little endearing */
   font-family: cursive;
   font-weight: bolder;
   font-style: italic;
@@ -94,6 +101,10 @@ h1 {
   padding-bottom: 5px;
 }
 
+/* Difficult to find colours that matches the tone of the creative tool
+These colours are subject to change, I feel like the dark-grey and light blue evoke a "mechanical" sense
+which does not fit quite well with the rest of the creative tool. 
+A possiblity is that the blue could be replaced with a light brown, tan, beige-ish colour? */
 .toggleBtn.active {
   background: rgb(59, 70, 73);
   color: rgb(110, 233, 255);

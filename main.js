@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let copiedGroup = null;
 
   // Function to hide anchors when clicking anything on the page
+  // Quality-of-life feature, having the ease of accessibility of removing visual clutter, leading to a plesant and satisfying user experience
   document.addEventListener("mousedown", (e) => {
     const container = document.getElementById("container");
     if (!container.contains(e.target)) {
@@ -313,6 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // CROPPER.JS OPTIONS
         // Put "aspectRatio: 1" in the {} before viewmode to crop in SQUARE
+        // Removing aspect ratio restriction provides users more freedom and creativity in their cropping and collage-ing
         cropper = new Cropper(croppedImage, {
           viewMode: 1,
           wheelZoomRatio: 0.35, // Adjust zoom sensitivity
@@ -349,6 +351,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const imgHeight = croppedCanvas.height * scale;
 
       // Random positions of cropped image on the canvas
+      // I decided on the cropped images being generated in random positions to add more "fun" and "playfulness" to my creative tool
+      // and not condemn it to be a soul-less existence.
       // "500" and "500" are the dimensions of the canvas
       // Minus image dimensions to prevent it from being placed outside the canvas
       const group = new Konva.Group({
@@ -372,6 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // addAnchor(group, 0, imgHeight, "bottomLeft");
 
       // Bring Clicked image to the Top Layer
+      // Deliberating whether this is a quality-of-life feature or not
+      // Because there are instances where a user may intend for the image they click to be brought forward
+      // and other instances where users may want to only manipulate the image without wanting to bring it to the top layer.
+      // A layer-organiser system (like photoshop) would deal with this problem but might be over-ambitious for this project.
       group.on("mousedown touchstart", function () {
         this.moveToTop();
         hideAllAnchors();
@@ -397,6 +405,9 @@ downloadButton.addEventListener("click", () => {
   layer.draw();
 
   const dataURL = stage.toDataURL({ pixelRatio: 2 }); // Higher quality image export
+  // Who wouldn't want a high quality export? Well there may be instances where a user may want a low quality export for stylistic purposes
+  // However, I would simply add the option of low resolution filters or sliders to satisfy that desire.
+  // The exported file should be of high quality.
   const link = document.createElement("a");
   link.href = dataURL;
   link.download = "collage.png";
