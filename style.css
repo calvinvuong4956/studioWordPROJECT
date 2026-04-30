@@ -1,9 +1,9 @@
 :root {
   --colour01: rgb(0, 0, 0);
   --colour02: rgb(255, 255, 255);
-  --colour03: rgb(255, 136, 57);
-  --colour04: rgba(0, 0, 225, 0.949);
-  --border: inset 0.3rem var(--colour01);
+  /* --colour03: rgb(255, 136, 57);
+  --colour04: rgba(0, 0, 225, 0.949); */
+  --border: inset 0.12rem var(--colour01);
 }
 
 body {
@@ -137,4 +137,40 @@ body.circle-mode .cropper-face {
 .cropper-point.point-se {
   width: 5px !important;
   height: 5px !important;
+}
+
+#guide {
+  text-align: center;
+}
+
+.keybind {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  font-size: 15px;
+  /* font-weight: bold; */
+}
+
+.ctrl {
+  background-color: rgb(250, 250, 250);
+  border: inset, 0.12rem;
+  border-color: rgba(204, 204, 204, 0.418);
+  box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.082);
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 85px;
+  height: auto;
+}
+
+.key {
+  background-color: rgb(250, 250, 250);
+  border: inset, 0.12rem;
+  border-color: rgba(204, 204, 204, 0.418);
+  box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.082);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: auto;
 }
