@@ -9,7 +9,7 @@
 body {
   background-color: var(--colour02);
   color: var(--colour01);
-  margin: 30px;
+  /* margin: 30px; */
   /* border: var(--border); */
 }
 
@@ -19,7 +19,7 @@ h1 {
   font-weight: bolder;
   font-style: italic;
   font-size: 50px;
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 30px;
 }
 
