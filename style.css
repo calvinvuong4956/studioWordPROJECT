@@ -150,6 +150,7 @@ body.circle-mode .cropper-face {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 50px;
+  color: rgb(0, 0, 0);
 }
 
 #controls-title {
