@@ -176,10 +176,10 @@ body.circle-mode .cropper-face {
 #keybind-description {
   display: flex;
   flex-direction: column;
-  padding-top: 12px;
+  padding-top: 9px;
   /* gap: 39px; */
-  gap: 35px;
-  font-size: 1rem;
+  gap: 34.5px;
+  font-size: 17px;
 }
 
 .key-desc {
