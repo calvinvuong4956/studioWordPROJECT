@@ -176,9 +176,9 @@ body.circle-mode .cropper-face {
 #keybind-description {
   display: flex;
   flex-direction: column;
-  padding-top: 9px;
+  padding-top: 10px;
   /* gap: 39px; */
-  gap: 34.5px;
+  gap: 34.6px;
   font-size: 17px;
 }
 
