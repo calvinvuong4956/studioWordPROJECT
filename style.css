@@ -54,8 +54,8 @@ h1 {
 }
 
 #trash {
-  width: 15.5px;
-  height: 15.5px;
+  max-width: 15.5px;
+  max-height: 15.5px;
 }
 
 #clear-btn {
@@ -63,6 +63,20 @@ h1 {
   padding-bottom: 2px;
   padding-left: 3px;
   padding-right: 3px;
+  /* Ease transitions used for visual smoothness and pleasantry */
+  transition: background-color 0.3s ease;
+}
+
+/* Red and Amber colours specifically used for their semantics reference to traffic light colours
+Red = DANGER/STOP = quickly and strongly makes users aware that something negative happened when clicking the clear-canvas button for the first time, making them re-think their decision.
+Amber = Final Warning = more pleasant middle colour needed for defusion of the intense negative feeling the initial red created, acting as a smooth reversion back to normal state  */
+#clear-btn.armed {
+  background-color: rgba(255, 0, 0, 0.459);
+}
+
+#clear-btn.expired {
+  background-color: rgba(255, 142, 50, 0.728);
+  transition: background-color 0.3s ease;
 }
 
 .btn {

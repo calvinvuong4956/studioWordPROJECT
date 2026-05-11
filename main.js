@@ -419,16 +419,54 @@ downloadButton.addEventListener("click", () => {
 });
 
 // ------------------------------------------------------------------------------------------------
-// CLEAR CANVAS BUTTON FUNCTION
+// CLEAR CANVAS BUTTON + WARNING FUNCTION
+let clearClickCount = 0;
+let clearTimeoutRef = null;
+
 document.getElementById("clearCanvasButton").addEventListener("click", () => {
-  // Before executing the clear canvas function, it removes the transformer first
-  // which retains all the relevant image manipulation functions and saves it from being destroyed by the code
-  // This ensures that the only thing being destroyed within the cropped-container are the cropped images
-  transformer.remove();
-  layer.destroyChildren();
-  // After the cropped images have been deleted
-  // The transformer is then re-added, restoring relevant images manipulation functions
-  layer.add(transformer);
-  transformer.nodes([]);
-  layer.draw();
+  const clearBtn = document.getElementById("clear-btn");
+
+  if (clearClickCount === 0) {
+    // The first click arms the clear button and starts the timer for the clear-canvas function
+    clearClickCount = 1;
+    clearBtn.classList.add("armed");
+
+    // Timer starts
+    clearTimeoutRef = setTimeout(() => {
+      // Time expires - clear button is disarmed denoted via in an instant change in colour back to the original colour of the clear-canvas button (i.e grey)
+      clearBtn.classList.remove("armed");
+      clearBtn.classList.add("expired");
+
+      setTimeout(() => {
+        clearBtn.classList.remove("expired");
+        clearClickCount = 0;
+        // 300ms (0.3s) is how long the "secondary" warning color (i.e amber) is shown for.
+        // 300ms I found to be the sweet spot for the colour to be shown long enough for the users to easily comprehend while also being visually pleasant
+      }, 300);
+      // 500ms (0.5s) is the Timer's total Duration.
+      // I believe 500ms is a good duration as it gives users enough time to click on the clear-canvas a second time
+      // as well as being short enough to reduce the chance of users accidentally clicking the button a second time while the timer is armed.
+    }, 500);
+
+    // The second click executes the function while changing the colour back to default grey, resetting the click count and the timer.
+  } else if (clearClickCount === 1) {
+    if (clearTimeoutRef) {
+      clearTimeout(clearTimeoutRef);
+    }
+
+    clearTimeoutRef = null;
+    clearClickCount = 0;
+    clearBtn.classList.remove("armed");
+
+    // Before executing the clear canvas function, it removes the transformer first
+    // which retains all the relevant image manipulation functions and saves it from being destroyed by the code
+    // This ensures that the only thing being destroyed within the cropped-container are the cropped images
+    transformer.remove();
+    layer.destroyChildren();
+    // After the cropped images have been deleted
+    // The transformer is then re-added, restoring relevant images manipulation functions
+    layer.add(transformer);
+    transformer.nodes([]);
+    layer.draw();
+  }
 });
