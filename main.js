@@ -3,7 +3,7 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 
 const stage = new Konva.Stage({
-  container: "container",
+  container: "cropped-container",
   width: 500,
   height: 500,
 });
@@ -177,10 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cropper;
   let copiedGroup = null;
+  let pasteCount = 1;
 
   // Function to hide anchors when clicking anything on the page
   document.addEventListener("mousedown", (e) => {
-    const container = document.getElementById("container");
+    const container = document.getElementById("cropped-container");
     if (!container.contains(e.target)) {
       hideAllAnchors();
       layer.find("Group").forEach((g) => g.name(""));
@@ -217,14 +218,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const selected = layer.findOne(".selected");
       if (selected) {
         copiedGroup = selected;
+        // Reset pasteCount back to 1, hence resetting potential offset of the pasted image, when copying a new cropped image
+        pasteCount = 1;
       }
     }
 
     if (e.ctrlKey && e.key === "v") {
       if (copiedGroup) {
         const clone = copiedGroup.clone({
-          x: copiedGroup.x() + 20, // Offset Pasted Clone to differentiate from original
-          y: copiedGroup.y() + 20,
+          x: copiedGroup.x() + 20 * pasteCount, // Offset Pasted Clones to differentiate from original and prior cropped images
+          y: copiedGroup.y() + 20 * pasteCount,
           draggable: true,
         });
 
@@ -237,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         layer.add(clone);
+        pasteCount++;
         transformer.moveToTop();
 
         // Auto-select Pasted Clone
@@ -411,5 +415,20 @@ downloadButton.addEventListener("click", () => {
 
   // Show anchor points again after export
   layer.find("Circle").forEach((anchor) => anchor.show());
+  layer.draw();
+});
+
+// ------------------------------------------------------------------------------------------------
+// CLEAR CANVAS BUTTON FUNCTION
+document.getElementById("clearCanvasButton").addEventListener("click", () => {
+  // Before executing the clear canvas function, it removes the transformer first
+  // which retains all the relevant image manipulation functions and saves it from being destroyed by the code
+  // This ensures that the only thing being destroyed within the cropped-container are the cropped images
+  transformer.remove();
+  layer.destroyChildren();
+  // After the cropped images have been deleted
+  // The transformer is then re-added, restoring relevant images manipulation functions
+  layer.add(transformer);
+  transformer.nodes([]);
   layer.draw();
 });

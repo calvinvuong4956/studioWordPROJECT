@@ -12,7 +12,14 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column; */
-  max-width: 100%;
+  /* max-width: 100%; */
+
+  /* min-width needed to allow zoom in of the website without the containers being cut off
+  granting users more precise crops and collage functions (image positioning, scaling etc.)
+  1200px is the perfect size as it provides sufficient empty space on each sides of the container for visual clarity 
+  Zooming in beyond 125% finds glitches where the website begins zooming towards the top-left of the page
+  Below 150% the zoom works as intended, i.e. zooming towards middle of the screen */
+  min-width: 1200px;
   background-color: var(--colour02);
   color: var(--colour01);
   /* margin: 30px; */
@@ -46,6 +53,18 @@ h1 {
   padding-top: 10px;
 }
 
+#trash {
+  width: 15.5px;
+  height: 15.5px;
+}
+
+#clear-btn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 .btn {
   padding-top: 2px;
   padding-bottom: 2px;
@@ -53,20 +72,34 @@ h1 {
   padding-right: 4px;
 }
 
-#cropButton,
-#downloadButton {
-  display: inline-block;
-  visibility: hidden;
+#button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 8px;
 }
 
-#cropButton {
+#left-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#cropButton,
+#downloadButton,
+#clearCanvasButton {
+  display: inline-block;
+  /* visibility: hidden; */
+  /* padding-top: 8px; */
+}
+
+/* #cropButton {
   padding-right: 2.5px;
 }
 
 #downloadButton {
   padding-left: 2.5px;
-}
+} */
 
 #shapeToggle {
   display: flex;
@@ -126,7 +159,7 @@ body.circle-mode .cropper-face {
   display: block;
 }
 
-#container {
+#cropped-container {
   background-color: rgb(233, 233, 233);
   width: 500px;
   height: 500px;
