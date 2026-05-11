@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cropped-Image Rotation Variables
   let qRotate = false;
   let eRotate = false;
-  let rotationSpeed = 0.5;
+  let rotationSpeed = 0.55;
 
   // Function to hide anchors when clicking anything on the page
   document.addEventListener("mousedown", (e) => {
