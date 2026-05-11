@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
           viewMode: 1,
           wheelZoomRatio: 0.35, // Adjust zoom sensitivity
         });
-        cropButton.style.display = "inline-block";
+        cropButton.style.visibility = "visible";
       };
       reader.readAsDataURL(file);
     }
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const croppedDataURL = croppedCanvas.toDataURL();
     croppedImage.src = croppedDataURL;
-    downloadButton.style.display = "inline-block";
+    downloadButton.style.visibility = "visible";
 
     // Send Cropped-Image to Konva Canvas
     const imageObj = new Image();

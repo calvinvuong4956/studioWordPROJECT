@@ -55,8 +55,9 @@ h1 {
 
 #cropButton,
 #downloadButton {
-  display: none;
-  padding-top: 10px;
+  display: inline-block;
+  visibility: hidden;
+  padding-top: 8px;
 }
 
 #cropButton {
