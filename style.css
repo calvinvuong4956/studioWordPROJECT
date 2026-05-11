@@ -64,7 +64,7 @@ h1 {
   padding-left: 3px;
   padding-right: 3px;
   /* Ease transitions used for visual smoothness and pleasantry */
-  transition: background-color 0.3s ease;
+  transition: background-color 0.1s ease;
 }
 
 /* Red and Amber colours specifically used for their semantics reference to traffic light colours
