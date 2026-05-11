@@ -179,6 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let copiedGroup = null;
   let pasteCount = 1;
 
+  // Cropped-Image Rotation Variables
+  let qRotate = false;
+  let eRotate = false;
+  let rotationSpeed = 0.5;
+
   // Function to hide anchors when clicking anything on the page
   document.addEventListener("mousedown", (e) => {
     const container = document.getElementById("cropped-container");
@@ -196,8 +201,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------------------------------------------------------------------
+  // Cropped-Image Rotation Function
+  function startRotationLoop() {
+    const selected = layer.findOne(".selected");
+    if (selected) {
+      if (qRotate) {
+        selected.rotation(selected.rotation() - rotationSpeed);
+      }
+      if (eRotate) {
+        selected.rotation(selected.rotation() + rotationSpeed);
+      }
+      if (qRotate || eRotate) {
+        layer.batchDraw();
+      }
+    }
+    requestAnimationFrame(startRotationLoop);
+  }
+
+  startRotationLoop();
+
+  // ------------------------------------------------------------------------------------------------
   // KEYBINDS
-  // "Delete" - Deleted selected cropped image
+  // "Delete/Backspace" - Deleted selected cropped image
   document.addEventListener("keydown", (e) => {
     if (e.key === "Delete" || e.key === "Backspace") {
       const selected = layer.findOne(".selected");
@@ -208,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // "Enter" - Crop Image
+    // "Enter/Space" - Crop Image
     if (e.key === " " || e.key === "Enter") {
       e.preventDefault(); // Prevents default spacebar import image action
       cropButton.querySelector("button").click();
@@ -253,6 +278,19 @@ document.addEventListener("DOMContentLoaded", () => {
         layer.draw();
       }
     }
+
+    // "Q" and "E" - Rotate Cropped Image
+    document.addEventListener("keydown", (e) => {
+      const key = e.key.toLowerCase();
+      if (key === "q") qRotate = true;
+      if (key === "e") eRotate = true;
+    });
+
+    document.addEventListener("keyup", (e) => {
+      const key = e.key.toLowerCase();
+      if (key === "q") qRotate = false;
+      if (key === "e") eRotate = false;
+    });
   });
 
   // ------------------------------------------------------------------------------------------------
@@ -357,8 +395,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // "500" and "500" are the dimensions of the canvas
       // Minus image dimensions to prevent it from being placed outside the canvas
       const group = new Konva.Group({
-        x: Math.random() * (500 - imgWidth),
-        y: Math.random() * (500 - imgHeight),
+        x: Math.random() * (500 - imgWidth) + imgWidth / 2,
+        y: Math.random() * (500 - imgHeight) + imgHeight / 2,
+        width: imgWidth,
+        height: imgHeight,
+        // Set Origin of Rotation to center of the cropped image
+        offsetX: imgWidth / 2,
+        offsetY: imgHeight / 2,
         draggable: true,
       });
 
