@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cropButton.querySelector("button").click();
     }
 
-    // Copy and Paste for Cropped Images
+    // "Copy" and "Paste" for Cropped Images
     if (e.ctrlKey && e.key === "c") {
       const selected = layer.findOne(".selected");
       if (selected) {
