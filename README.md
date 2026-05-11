@@ -1,1 +1,1 @@
-#For Mediated Expressions, Bachelor of Design (Digital Media), RMIT University
+## For Mediated Expressions, Bachelor of Design (Digital Media), RMIT University
