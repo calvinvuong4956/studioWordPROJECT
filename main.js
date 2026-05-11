@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // KEYBINDS
   // "Delete" - Deleted selected cropped image
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Delete") {
+    if (e.key === "Delete" || e.key === "Backspace") {
       const selected = layer.findOne(".selected");
       if (selected) {
         selected.destroy();
