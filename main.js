@@ -202,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Delete" || e.key === "Backspace") {
       const selected = layer.findOne(".selected");
       if (selected) {
+        transformer.nodes([]);
         selected.destroy();
         layer.draw();
       }
@@ -217,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.ctrlKey && e.key === "c") {
       const selected = layer.findOne(".selected");
       if (selected) {
-        copiedGroup = selected;
+        copiedGroup = selected.clone();
         // Reset pasteCount back to 1, hence resetting potential offset of the pasted image, when copying a new cropped image
         pasteCount = 1;
       }
