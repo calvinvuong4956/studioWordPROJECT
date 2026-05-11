@@ -403,7 +403,7 @@ downloadButton.addEventListener("click", () => {
   const dataURL = stage.toDataURL({ pixelRatio: 2 }); // Higher quality image export
   const link = document.createElement("a");
   link.href = dataURL;
-  link.download = "collage.png";
+  link.download = "cropllage.png";
 
   // [ Link "download" button to the single, most recent Cropped Image ]
   // link.href = croppedImage.src;
