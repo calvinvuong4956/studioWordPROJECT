@@ -103,7 +103,7 @@ Amber = Final Warning = more pleasant middle colour needed for defusion of the i
 #downloadButton,
 #clearCanvasButton {
   display: inline-block;
-  /* visibility: hidden; */
+  visibility: hidden;
   /* padding-top: 8px; */
 }
 

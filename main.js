@@ -360,6 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
           viewMode: 1,
           wheelZoomRatio: 0.35, // Adjust zoom sensitivity
         });
+        // Have "Crop Image" button visible after an image is uploaded
         cropButton.style.visibility = "visible";
       };
       reader.readAsDataURL(file);
@@ -375,7 +376,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const croppedDataURL = croppedCanvas.toDataURL();
     croppedImage.src = croppedDataURL;
+    // Have "Download" and "Clear Canvas" buttons visible after cropping an image
     downloadButton.style.visibility = "visible";
+    document.getElementById("clearCanvasButton").style.visibility = "visible";
 
     // Send Cropped-Image to Konva Canvas
     const imageObj = new Image();
