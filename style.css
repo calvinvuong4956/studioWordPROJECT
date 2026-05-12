@@ -58,6 +58,22 @@ h1 {
   max-height: 15.5px;
 }
 
+#rclick-img {
+  width: 25px;
+  height: 36px;
+}
+
+#mwheel-img {
+  width: 40px;
+  height: 44px;
+}
+
+.icon-word {
+  font-size: 13px;
+  font-style: italic;
+  padding-bottom: 2px;
+}
+
 #clear-btn {
   padding-top: 2px;
   padding-bottom: 2px;
@@ -267,6 +283,30 @@ body.circle-mode .cropper-face {
   padding-bottom: 10px;
   padding-left: 16px;
   padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+.icon-key {
+  background-color: rgba(250, 250, 250, 0.808);
+  border: 0.12rem;
+  /* border: inset, 0.12rem; */
+  border-color: rgba(255, 255, 255, 0.418);
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.082);
+  max-width: 58px;
+  max-height: 74.2px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: auto;
 }
 
