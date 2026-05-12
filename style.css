@@ -201,6 +201,16 @@ body.circle-mode .cropper-face {
   height: 5px !important;
 }
 
+#controls-title {
+  text-align: center;
+  font-family: cursive;
+  /* font-style: italic; */
+  /* font-weight: bolder; */
+  font-size: 29px;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+
 #guide {
   display: flex;
   align-items: center;
@@ -230,16 +240,6 @@ body.circle-mode .cropper-face {
   font-size: 17px;
   display: flex;
   align-items: center;
-}
-
-#controls-title {
-  text-align: center;
-  font-family: cursive;
-  /* font-style: italic; */
-  /* font-weight: bolder; */
-  font-size: 29px;
-  padding-top: 60px;
-  padding-bottom: 25px;
 }
 
 .key {
