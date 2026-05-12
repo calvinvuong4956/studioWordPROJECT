@@ -213,11 +213,30 @@ body.circle-mode .cropper-face {
 
 #guide {
   display: flex;
+  justify-content: center;
+  gap: 9.4rem;
+}
+
+#cropper-keybinds {
+  display: flex;
   align-items: center;
   flex-direction: column;
   /* Makes it stick to the left of the container
   Comment padding-right out to center it */
-  padding-right: 40.6rem;
+  /* padding-right: 40.6rem; */
+  /* gap: 2rem; */
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+#collage-keybinds {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* Makes it stick to the left of the container
+  Comment padding-right out to center it */
+  /* padding-right: 40.6rem; */
+  padding-right: 2px;
   /* gap: 2rem; */
   gap: 15px;
   margin-bottom: 50px;
@@ -225,8 +244,12 @@ body.circle-mode .cropper-face {
 
 .guide-row {
   display: flex;
-  gap: 20px;
+  gap: 0px;
   width: 500px;
+}
+
+#cropper-keybinds .guide-row .keybind {
+  min-width: 80px;
 }
 
 .guide-row .keybind {
