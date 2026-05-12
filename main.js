@@ -201,6 +201,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------------------------------------------------------------------
+  // RIGHT-CLICK DRAG NAVIGATION IN CROPPER.JS CONTAINER
+  let rightDrag = false;
+  let startX, startY;
+
+  const cropperWrapper = document.getElementById("cropperContainer");
+
+  // Remove right-click default windows context menu to appear when clicking right-click within the Cropper Container
+  // Right-click context menu still pops up anywhere else on the page
+  cropperWrapper.addEventListener("contextmenu", (e) => e.preventDefault());
+
+  // Right-click Mouse-EventListener
+  cropperWrapper.addEventListener("mousedown", (e) => {
+    if (e.button === 2 && cropper) {
+      rightDrag = true;
+      startX = e.pageX;
+      startY = e.pageY;
+    }
+  });
+
+  // Allows navigation within cropper-container even if mouse hovers off cropper container, when right-click is being held
+  window.addEventListener("mousemove", (e) => {
+    if (rightDrag && cropper) {
+      const dx = e.pageX - startX;
+      const dy = e.pageY - startY;
+      cropper.move(dx, dy);
+      startX = e.pageX;
+      startY = e.pageY;
+    }
+  });
+
+  // Stop navigation function once right-click is released
+  window.addEventListener("mouseup", (e) => {
+    if (e.button === 2) {
+      rightDrag = false;
+    }
+  });
 
   // ------------------------------------------------------------------------------------------------
   // Cropped-Image Rotation Function
