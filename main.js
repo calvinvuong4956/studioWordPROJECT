@@ -424,12 +424,23 @@ document.addEventListener("DOMContentLoaded", () => {
     imageObj.onload = function () {
       // Scale cropped image to fit within Canvas while maintaining aspect ratio of the Crop
       const maxSize = 200;
-      const scale = Math.min(
+      const minSize = 70;
+      let scale = Math.min(
         // 1, to prevent upscaling of small crops and only allows downscaling of large crops
         1,
         maxSize / croppedCanvas.width,
         maxSize / croppedCanvas.height,
       );
+      // Ensures the cropped images is never smaller than the const. minSize
+      // If the crop is smaller than 70px, the resulting pasted cropped image will default to 70px
+      // In the instance that a user may crop something that is smaller than 70px, this code will help remove the frustration of manipulating the tiny image
+      const minScale = Math.max(
+        minSize / croppedCanvas.width,
+        minSize / croppedCanvas.height,
+      );
+      if (minScale > scale) {
+        scale = minScale;
+      }
       const imgWidth = croppedCanvas.width * scale;
       const imgHeight = croppedCanvas.height * scale;
 
