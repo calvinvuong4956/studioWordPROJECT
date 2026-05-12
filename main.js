@@ -201,6 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------------------------------------------------------------------
+
+  // ------------------------------------------------------------------------------------------------
   // Cropped-Image Rotation Function
   function startRotationLoop() {
     const selected = layer.findOne(".selected");
@@ -359,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cropper = new Cropper(croppedImage, {
           viewMode: 1,
           wheelZoomRatio: 0.35, // Adjust zoom sensitivity
+          autoCropArea: 0.5, // Initial Crop Preview Size
         });
         // Have "Crop Image" button visible after an image is uploaded
         cropButton.style.visibility = "visible";
