@@ -17,7 +17,7 @@ body {
   /* min-width needed to allow zoom in of the website without the containers being cut off
   granting users more precise crops and collage functions (image positioning, scaling etc.)
   1200px is the perfect size as it provides sufficient empty space on each sides of the container for visual clarity 
-  Zooming in beyond 125% finds glitches where the website begins zooming towards the top-left of the page
+  Zooming in beyond 125% finds glitches where the website begins zooming towards the top-left of the page, due to containers being cut off by the screen's borders.
   Below 150% the zoom works as intended, i.e. zooming towards middle of the screen */
   min-width: 1200px;
   background-color: var(--colour02);
@@ -98,13 +98,13 @@ which I hope will evoke a positive reaction from first-time users.
 
 However, this modal design may arise issues related to learnability, which consequently impairs usability. 
 The issue is that the modal design is hidden behind a button that houses an icon,
-and has no obvious visible instructions attached to it to inform users of what the button does and how it does it.
+which has no obvious visible instructions attached to it, to inform users of what the button does and how it does it.
 
 As a result, user usability is impaired due to a lack of understanding of the button's function.
 (As mentioned in the HTML file) To try and mitigate this, I added a title for the button, which displays its function if users hover over it.
 
 However, I realise there is no information regarding the colours' meanings and is fully reliant on users' own intuition and curiosity to figure out their purpose.
-Hence learnability and usability is completely dependent on users, when talking about my "traffic-light" modal design. */
+Hence learnability and usability is completely dependent on users, when on the topic of my "traffic-light" modal design. */
 #clear-btn.armed {
   background-color: rgba(255, 0, 0, 0.459);
 }
@@ -139,8 +139,8 @@ to improve visual clarity and give a clear sense of direction for first-time use
 removing the need of extra visual instructions to guide users of what to do first.
 
 This method of learnability is once again completely reliant on user intuition. 
-However this may develop a more intimate connection between my creative tool and users, as it encourages greater engagement and exploration,
-leading to a more satisfying/fulfilling experience through users completing the challenge of figuring out how to use my creative tool, seemingly without any external help. 
+However, this may develop a more intimate connection between my creative tool and users, as it encourages greater engagement and exploration,
+leading to a more satisfying/fulfilling experience through users completing a challenge of figuring out how to use my creative tool, seemingly without any external help. 
 More insight about "visibility: hidden" can be found in my javascript */
 #cropButton,
 #downloadButton,
