@@ -202,6 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ------------------------------------------------------------------------------------------------
   // RIGHT-CLICK DRAG NAVIGATION IN CROPPER.JS CONTAINER
+  // Greatly enhances usability
+  // HEAVILY mitigates the frustration of cropper's janky mechanisms.
   let rightDrag = false;
   let startX, startY;
 
@@ -318,6 +320,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // "Q" and "E" - Rotate Cropped Image
+    // It honestly is especially tedious trying to rotate an image through clicking that one tiny anchor point at the top
+    // To reduce the amount of clicks needed to manipulate an image, using keybinds to rotate an image seems very intuitive,
+    // greatly improving work-flow and usability.
     document.addEventListener("keydown", (e) => {
       const key = e.key.toLowerCase();
       if (key === "q") qRotate = true;
@@ -415,7 +420,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const croppedDataURL = croppedCanvas.toDataURL();
     croppedImage.src = croppedDataURL;
+
     // Have "Download" and "Clear Canvas" buttons visible after cropping an image
+
+    // These buttons appear seemingly very conveniently after the respective action has been.
+    // (i.e. cropButton appears after an image has been imported => downloadButton & clearCanvasButton appears after a crop has been made)
+    // Similar to the CSS comments, this "convenient appearance" behaviour enhances learnability and usability while retaining the minimalism style,
+    // as it basically gives users step-by-step instructions in a text-less form.
     downloadButton.style.visibility = "visible";
     document.getElementById("clearCanvasButton").style.visibility = "visible";
 
@@ -433,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       // Ensures the cropped images is never smaller than the const. minSize
       // If the crop is smaller than 70px, the resulting pasted cropped image will default to 70px
-      // In the instance that a user may crop something that is smaller than 70px, this code will help remove the frustration of manipulating the tiny image
+      // In the instance that a user may crop something that is smaller than 70px, this code will help remove the frustration of manipulating images that are TINY.
       const minScale = Math.max(
         minSize / croppedCanvas.width,
         minSize / croppedCanvas.height,
