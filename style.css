@@ -85,7 +85,26 @@ h1 {
 
 /* Red and Amber colours specifically used for their semantics reference to traffic light colours
 Red = DANGER/STOP = quickly and strongly makes users aware that something negative happened when clicking the clear-canvas button for the first time, making them re-think their decision.
-Amber = Final Warning = more pleasant middle colour needed for defusion of the intense negative feeling the initial red created, acting as a smooth reversion back to normal state  */
+Amber = Final Warning = more pleasant middle colour needed for defusion of the intense negative feeling the initial red created, acting as a smooth reversion back to normal state 
+
+I decided to convey the modal through this design because it maintains
+the minimalistic characteristic of my webpage and also retains users' immersion.
+The expected pop-up confirmation type modal is quite visually disruptive,
+and could be a frustration for users who may frequently use the clearCanvas function, to always be met with such an intense pop-up window leading to a decline in user satisfaction and experience.
+
+My modal design, in comparison, is more
+interactive, visually pleasing, fun and more novel pertaining to information design in how I convey the modal,
+which I hope will evoke a positive reaction from first-time users.
+
+However, this modal design may arise issues related to learnability, which consequently impairs usability. 
+The issue is that the modal design is hidden behind a button that houses an icon,
+and has no obvious visible instructions attached to it to inform users of what the button does and how it does it.
+
+As a result, user usability is impaired due to a lack of understanding of the button's function.
+(As mentioned in the HTML file) To try and mitigate this, I added a title for the button, which displays its function if users hover over it.
+
+However, I realise there is no information regarding the colours' meanings and is fully reliant on users' own intuition and curiosity to figure out their purpose.
+Hence learnability and usability is completely dependent on users, when talking about my "traffic-light" modal design. */
 #clear-btn.armed {
   background-color: rgba(255, 0, 0, 0.459);
 }
@@ -115,6 +134,14 @@ Amber = Final Warning = more pleasant middle colour needed for defusion of the i
   gap: 5px;
 }
 
+/* I designed these buttons to be initally hidden ("visibility: hidden") 
+to improve visual clarity and give a clear sense of direction for first-time users,
+removing the need of extra visual instructions to guide users of what to do first.
+
+This method of learnability is once again completely reliant on user intuition. 
+However this may develop a more intimate connection between my creative tool and users, as it encourages greater engagement and exploration,
+leading to a more satisfying/fulfilling experience through users completing the challenge of figuring out how to use my creative tool, seemingly without any external help. 
+More insight about "visibility: hidden" can be found in my javascript */
 #cropButton,
 #downloadButton,
 #clearCanvasButton {
@@ -217,6 +244,10 @@ body.circle-mode .cropper-face {
   gap: 9.4rem;
 }
 
+/* I finally conjured a keybind manual design that I am proud of */
+/* Separation of the keybinds to be placed under their respective containers */
+/* ONCE AGAIN, learnability is fully reliant on users' intuition, if they can make the connection between keybind and container, and that those keybinds ONLY work for that specific container.
+However, if my design is intuitive enough, learnability is GREATLY enhanced, all the while maintaining the minimalistic style and visual clarity.  */
 #cropper-keybinds {
   display: flex;
   align-items: center;
@@ -303,6 +334,8 @@ body.circle-mode .cropper-face {
   height: auto;
 }
 
+/* Connect words are a smaller font-size than "key" and "key-descriptions" as to not distract users from the main subject
+and to improve visual clarity. */
 .connect-word {
   font-size: 13px;
   padding-top: 14px;
