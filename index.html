@@ -26,16 +26,23 @@
         <input type="file" id="inputImage" accept="image/*" />
       </div>
 
-      <!-- Buttons that house icons/imgs (i.e. shapeToggle, circleToggle, clearCanvasButton) are given Titles 
-       Granting users the option to gain more information about the buttons, which is done through hovering over them for a second or so. 
-       This enhances learnability but is dependent on user's prior knowledge of knowing that extra information is hidden behind the buttons and can be accessed via the hover action. 
+      <!-- Buttons that house icons/imgs (i.e. shapeToggle, circleToggle, clearCanvasButton) are given custom tooltips 
+       Granting users the option to gain more information about the buttons, which is done through hovering over them. 
+       I decided to use custom tooltips instead of the windows in-built because for the windows in-built, the delay between hover and the information pop-up is too long
+       and by designing my own tool-tip, I can shorten that delay.
+       Providing crucial information about my buttons quickly enhances learnability
+       but is dependent on user's prior knowledge of knowing that extra information is hidden behind the buttons and can be accessed via the hover action. 
        I decided to display information in this secretive manner to preserve the webpages' minimalistic style (characterisation) 
        which fulfills my worth&values of satisfaction, and in this context, satisfaction is achieved through visual clarity or minimal visual clutter. -->
       <div id="shapeToggle">
-        <button id="squareToggle" class="toggleBtn active" title="Square Crop">
+        <button
+          id="squareToggle"
+          class="toggleBtn active"
+          data-tooltip="Square Crop"
+        >
           ■
         </button>
-        <button id="circleToggle" class="toggleBtn" title="Circle Crop">
+        <button id="circleToggle" class="toggleBtn" data-tooltip="Circle Crop">
           ●
         </button>
       </div>
@@ -52,7 +59,7 @@
           </div>
 
           <div id="clearCanvasButton">
-            <button id="clear-btn" title="Clear Canvas">
+            <button id="clear-btn" data-tooltip="Click Twice to Clear Canvas">
               <img id="trash" src="trash.png" alt="Clear" />
             </button>
           </div>
