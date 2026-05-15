@@ -498,6 +498,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     imageObj.src = croppedDataURL; // loads the cropped result into Konva
   });
+  const scrollHint = document.getElementById("scroll-hint");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      scrollHint.style.opacity = "0";
+      scrollHint.style.pointerEvents = "none";
+    }
+  });
 });
 
 // ------------------------------------------------------------------------------------------------
