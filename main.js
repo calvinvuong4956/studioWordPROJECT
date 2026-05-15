@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const scrollHint = document.getElementById("scroll-hint");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 50) {
       scrollHint.style.opacity = "0";
       scrollHint.style.pointerEvents = "none";
     }
