@@ -49,6 +49,10 @@ h1 {
   margin: 40px;
 }
 
+/* The positioning the pointing-down arrow is in the center, near-bottom of the page to signal that something extra is down where the arrow is pointing towards. 
+To further enforce this idea, the arrow is animated with a subtle "bounce" motion to catch the users' attention.
+As a result, the users are hopefully more inclined to discover what the arrow is signalling to, and as a result, scroll down to discover the keybind controls,
+enhancing learnability, hence usability of my creative tool. */
 #scroll-hint {
   position: relative;
   bottom: 50px;

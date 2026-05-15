@@ -498,6 +498,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     imageObj.src = croppedDataURL; // loads the cropped result into Konva
   });
+  // Scroll-hint Arrow Disappearing Function
+
+  // The arrow slowly fades out after the user has scrolled-down more than 50px (scrollY > 50)
+  // Since it is assumed the arrow has done it's job of making users scroll down and have discovered the keybind controls,
+  // I believe that the arrow is no longer needed, and it's existence simply is regarded as visual clutter.
+  // Hence to remove it seemlessly, a slow fade out is applied (in css, transition: opacity 0.5s ease)
+  // All in all, this helps retain the minimalistic style and pleasant user experience of my creative tool.
   const scrollHint = document.getElementById("scroll-hint");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
