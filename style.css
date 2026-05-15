@@ -56,7 +56,7 @@ h1 {
   transform: translateX(-50%);
   width: 19px;
   height: 10px;
-  opacity: 0.7;
+  opacity: 0.85;
   pointer-events: none;
   animation: bounce 1.5s infinite;
   transition: opacity 0.5s ease;
