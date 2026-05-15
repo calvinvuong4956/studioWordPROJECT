@@ -146,7 +146,7 @@ More insight about "visibility: hidden" can be found in my javascript */
 #downloadButton,
 #clearCanvasButton {
   display: inline-block;
-  /* visibility: hidden; */
+  visibility: hidden;
   /* padding-top: 8px; */
 }
 
@@ -200,7 +200,7 @@ More insight about "visibility: hidden" can be found in my javascript */
   This is particularly crucial in the case of the clearCanvasButton where its function is quite abnormal, making it less intuitive for first-time users,
   leading to a higher chance of users accidentally deleting their canvas simply due to curiosity of what the button does,
   or frustration from the button not doing anything after the first-click.
-  
+
   The increase chance of accidentally executing the clearCanvas function is quite literally the opposite of what I was intending when designing the traffic-light type modal for the button. */
   transition: opacity 0.15s ease;
 }
