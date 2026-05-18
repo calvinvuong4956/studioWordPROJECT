@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------------------------------------------------------------------
-  // CROP BUTTON+IMAGE FUNCTION
+  // CROP BUTTON+IMAGE+SCROLL-HINT FUNCTION
   cropButton.addEventListener("click", () => {
     let croppedCanvas = cropper.getCroppedCanvas();
     if (cropAsCircle) {
