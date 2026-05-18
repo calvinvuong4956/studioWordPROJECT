@@ -586,7 +586,7 @@ document.getElementById("clearCanvasButton").addEventListener("click", () => {
     transformer.remove();
     layer.destroyChildren();
     // After the cropped images have been deleted
-    // The transformer is then re-added, restoring relevant images manipulation functions
+    // The transformer is then re-added, restoring relevant image-manipulation functions
     layer.add(transformer);
     transformer.nodes([]);
     layer.draw();
