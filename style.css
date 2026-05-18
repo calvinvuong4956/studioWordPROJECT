@@ -61,7 +61,7 @@ enhancing learnability, hence usability of my creative tool. */
   width: 19px;
   height: 10px;
   opacity: 0.85;
-  pointer-events: none;
+  cursor: pointer;
   animation: bounce 1.5s infinite;
   transition: opacity 0.5s ease;
 }

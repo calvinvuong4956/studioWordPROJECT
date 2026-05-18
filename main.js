@@ -512,6 +512,15 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollHint.style.pointerEvents = "none";
     }
   });
+  // Mouse-click Event, webpage automatic scroll-down when clicking the scroll-down arrow
+  // First-time user intuition thinks to click on arrow instead of scrolling-down
+  // As a result, this mouse-click function provides feedback for users' clicks
+  // while fulfilling the arrow's purpose of making users scroll-down to the keybind manual
+  scrollHint.addEventListener("click", () => {
+    scrollHint.style.opacity = "0";
+    scrollHint.style.pointerEvents = "none";
+    document.getElementById("guide").scrollIntoView({ behavior: "smooth" });
+  });
 });
 
 // ------------------------------------------------------------------------------------------------
